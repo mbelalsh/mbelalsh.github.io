@@ -9,24 +9,24 @@ email: mbilalshahed@gmail.com
 #website: www.github.com/sproogen/resume-theme
 
 # Social links
-twitter_username: facespics
-github_username:  sproogen
+twitter_username: MBilal_Shahid
+github_username:  mbelalsh
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
-instagram_username: chillwildlife
-linkedin_username: jameswgrant
+instagram_username: bilal_klair
+#linkedin_username: jameswgrant
 # pinterest_username: jekyll
-youtube_username: globalmtb
+#youtube_username: globalmtb
 # googleplus_username: +jekyll
 
 # About Section
 # about_title: About Me
 about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
-  Hi, my name's Brett and I'm a senior network system administrator. As well as administrating systems I also have experience making software and web apps. I have worked at a number of companies gaining teamwork and leadership skills.
+  Hi, my name's Muhammad Bilal Shahid and I'm a graduate research assistat in microfabrication at Incheon National University. I am passionate about physics informed learning and thus have some experience applying to some of the projects in my laboratory. Apart from that, I have worked at a number of projects as part of the courses that I completed earlier this year. The repositeries of those projects can be found on my Github profile.
 
-  I am most skilled in: <mark>AWS</mark> and <mark>Eating Pizza</mark>
+  I am most skilled in: <mark>Keras</mark>, <mark>Tensorflow</mark> and some other python libraries.
 
 # Projects Section
 # projects_title: Projects
