@@ -26,7 +26,7 @@ about_profile_image: images/profile.jpg
 about_content: | # this will include new lines to allow paragraphs
   Hi, my name's Muhammad Bilal Shahid and I'm a graduate research assistat in microfabrication at Incheon National University. I am passionate about physics informed learning and thus have some experience applying to some of the projects in my laboratory. Apart from that, I have worked at a number of projects as part of the courses that I completed earlier this year. The repositeries of those projects can be found on my Github profile.
 
-  I am most skilled in: <mark>Keras</mark>, <mark>Tensorflow</mark>.
+  I am most skilled in: <mark>Keras</mark>, and <mark>Tensorflow</mark>.
 
 # Projects Section
 # projects_title: Projects
