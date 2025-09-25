@@ -23,7 +23,7 @@
                   Muhammad Bilal Shahid
                 </p>
                 <p>
-		I am working towards my PhD at <a href="https://coordinatedsystemslab.me.iastate.edu/">Coordinated Systems Lab</a> in Ames, IA, where I am working under kind supervision of <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Dr. Cody Fleming</a>.
+		I am working towards my PhD at <a href="https://coordinatedsystemslab.me.iastate.edu/">Coordinated Systems Lab</a> in Ames, IA, where I am working under the kind supervision of <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Dr. Cody Fleming</a>.
 		During my PhD, I've worked on a number of interesting projects mainly related to dynamical systems modeling and uncertainty quantification. 
                 </p>
                 <p style="text-align:center">
@@ -139,6 +139,48 @@
         </p>
       </td>
     </tr>            
+
+    <!----------------------------- Third Paper ----------------------------->
+    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='CF_dynamics_img'><video  width=100% muted autoplay loop>
+          <source src="images/CF_dynamics.png" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/CF_dynamics.png' width=100%>
+        </div>
+        <script type="text/javascript">
+          function bog_start() {
+            document.getElementById('CF_dynamics_img').style.opacity = "1";
+          }
+
+          function bog_stop() {
+            document.getElementById('CF_dynamics_img').style.opacity = "0";
+          }
+          bog_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://creiser.github.io/binary_opacity_grid/">
+          <span class="papertitle">Towards Robust Car Following Dynamics Modeling via Blackbox Models: Methodology, Analysis, and Recommendations
+</span>
+        </a>
+        <br>
+				<strong>Muhammad Bilal Shahid</strong>,
+				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>,
+        <br>
+        <em>Transportation Research Record</em>, 2024
+        <br>
+        <a href="https://arxiv.org/abs/2402.07139">arXiv</a>
+        /
+        <a href="https://github.com/coordinated-systems-lab/CarFollowModels">Code</a>
+        <p></p>
+        <p>
+        We conducted a comprehensive study on the optimal target variable selection for training the Blackbox models of car following dynamics. The resulting models performed better in terms of extrapolation and accumulated lower error over time.
+        </p>
+      </td>
+    </tr>     
 
         </td>
       </tr>
