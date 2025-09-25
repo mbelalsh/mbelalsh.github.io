@@ -57,49 +57,40 @@
     <tr onmouseout="bog_stop()" onmouseover="bog_start()">
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
-          <div class="two" id='bog_image'><video  width=100% muted autoplay loop>
-          <source src="images/bog.jpg" type="video/mp4">
+          <div class="two" id='PredCorr_img'><video  width=100% muted autoplay loop>
+          <source src="images/PredCorr.png" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
-          <img src='images/bog.jpg' width=100%>
+          <img src='images/PredCorr.png' width=100%>
         </div>
         <script type="text/javascript">
           function bog_start() {
-            document.getElementById('bog_image').style.opacity = "1";
+            document.getElementById('PredCorr_img').style.opacity = "1";
           }
 
           function bog_stop() {
-            document.getElementById('bog_image').style.opacity = "0";
+            document.getElementById('PredCorr_img').style.opacity = "0";
           }
           bog_stop()
         </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <a href="https://creiser.github.io/binary_opacity_grid/">
-          <span class="papertitle">Binary Opacity Grids: Capturing Fine Geometric Detail for Mesh-Based View Synthesis
+          <span class="papertitle">HopCast: Calibration of Autoregressive Dynamics Models
 </span>
         </a>
         <br>
-				<a href="https://creiser.github.io/">Christian Reiser</a>,
-				<a href="http://stephangarbin.com/">Stephan J. Garbin</a>,
-				<a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
-				<a href="https://dorverbin.github.io/">Dor Verbin</a>,
-				<a href="https://szeliski.org/RichardSzeliski.htm">Richard Szeliski</a>,
-				<a href="https://bmild.github.io/">Ben Mildenhall</a>,
-				<strong>Jonathan T. Barron</strong>,
-				<a href="https://phogzone.com/">Peter Hedman</a>*,
-				<a href="https://www.cvlibs.net/">Andreas Geiger</a>*		
+				<strong>Muhammad Bilal Shahid</strong>,
+				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>*,
         <br>
-        <em>SIGGRAPH</em>, 2024
+        <em>Under Review</em>, 2025
         <br>
-        <a href="https://creiser.github.io/binary_opacity_grid/">project page</a>
+        <a href="https://arxiv.org/abs/2501.16587">arXiv</a>
         /
-        <a href="https://www.youtube.com/watch?v=2TPUmGRg8bM">video</a>
-        /
-        <a href="https://arxiv.org/abs/2402.12377">arXiv</a>
+        <a href="https://github.com/mbelalsh/HopCast">Code</a>
         <p></p>
         <p>
-        Applying anti-aliasing to a discrete opacity grid lets you render a hard representation into a soft image, and this enables highly-detailed mesh recovery.
+        A Predictor-Corrector mechanism to generate calibrated prediction intervals for autoregressive dynamics models.
         </p>
       </td>
     </tr>            
