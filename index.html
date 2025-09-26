@@ -144,19 +144,25 @@
       </tr>
     </table>
 
-    <script>
-      // Single pair of hover helpers
-      function bog_start(id) {
-        var el = document.getElementById(id);
-        if (el) el.style.opacity = "1";
+    <div id="img_modal" class="popup-modal" aria-hidden="true">
+      <button class="popup-close" aria-label="Close modal">&times;</button>
+      <img class="popup-content" id="popup_full" alt="">
+    </div>
+
+    <style>
+      .popup-modal {
+        display:none; position:fixed; inset:0;
+        background:rgba(0,0,0,0.9); z-index:1000;
+        padding:60px; text-align:center;
       }
-      function bog_stop(id) {
-        var el = document.getElementById(id);
-        if (el) el.style.opacity = "0";
+      .popup-modal[aria-hidden="false"] { display:block; }
+      .popup-content { max-width:80vw; max-height:80vh; }
+      .popup-close {
+        position:absolute; top:16px; right:24px;
+        font-size:40px; color:#fff; background:none; border:0; cursor:pointer;
       }
-      // Initialize overlays hidden
-      ['ncde_corr_img','PredCorr_img','CF_dynamics_img'].forEach(id => bog_stop(id));
-    </script>
+      .popup-close:hover { color:#bbb; }
+    </style>
 
   </body>
 </html>
