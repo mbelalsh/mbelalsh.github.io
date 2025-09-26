@@ -57,13 +57,9 @@
     <!-- ========== First Paper ========== -->
     <tr onmouseout="bog_stop('ncde_corr_img')" onmouseover="bog_start('ncde_corr_img')">
       <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one" style="position:relative;">
-          <div class="two" id="ncde_corr_img" style="position:absolute; inset:0; opacity:0; transition:opacity .2s;">
-            <img src="images/ncde_corr.png" alt="Neural CDE Corrector preview" style="width:100%; height:auto;">
-          </div>
-          <img class="popup-thumb" src="images/ncde_corr.png" alt="Neural CDE Corrector"
-               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;" data-img="images/ncde_corr.png">
-        </div>
+        <!-- Thumbnail / small image -->
+        <img id="ncde_corr_thumb" src="images/ncde_corr.png" width="100%" style="cursor:pointer; border-radius:6px;">
+
           <!-- The Modal -->
         <div id="ncde_corr_modal" class="modal">
           <span class="close">&times;</span>
