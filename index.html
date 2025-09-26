@@ -54,176 +54,108 @@
           --> 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-    <!----------------------------- First Paper ----------------------------->           
-
-    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
+    <!-- ========== First Paper ========== -->
+    <tr onmouseout="bog_stop('ncde_corr_img')" onmouseover="bog_start('ncde_corr_img')">
       <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='ncde_corr_img'><video  width=100% muted autoplay loop>
-          <source src="images/ncde_corr.png" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img class="popup-thumb" src='images/ncde_corr.png' width=100%>
+        <div class="one" style="position:relative;">
+          <div class="two" id="ncde_corr_img" style="position:absolute; inset:0; opacity:0; transition:opacity .2s;">
+            <img src="images/ncde_corr.png" alt="Neural CDE Corrector preview" style="width:100%; height:auto;">
+          </div>
+          <img class="popup-thumb" src="images/ncde_corr.png" alt="Neural CDE Corrector"
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
         </div>
-        <script type="text/javascript">
-          function bog_start() {
-            document.getElementById('ncde_corr_img').style.opacity = "1";
-          }
-
-          function bog_stop() {
-            document.getElementById('ncde_corr_img').style.opacity = "0";
-          }
-          bog_stop()
-        </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <a href="https://creiser.github.io/binary_opacity_grid/">
-          <span class="papertitle">Neural CDEs as Correctors for learned time series models
-</span>
+          <span class="papertitle">Neural CDEs as Correctors for Learned Time-Series Models</span>
         </a>
         <br>
-				<strong>Muhammad Bilal Shahid</strong>,
+        <strong>Muhammad Bilal Shahid</strong>,
         <a href="https://prajwalkoirala.github.io/">Prajwal Koirla</a>,
-				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>,
+        <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
         <em>Under Review</em>, 2025
         <br>
-        <a href="https://arxiv.org/abs/2501.16587">arXiv</a>
-        /
+        <a href="https://arxiv.org/abs/2501.16587">arXiv</a> /
         <a href="https://github.com/mbelalsh/ncde_corr">Code</a>
         <p></p>
-        <p>
-        We proposed that the error dynamics of any learned time-series model can be modeled by Neural CDE to improve their forecasting performance.
-        </p>
+        <p>We propose modeling the error dynamics of learned time-series predictors with a Neural CDE to improve long-horizon forecasting.</p>
       </td>
-    </tr>            
+    </tr>
+        
 
-    <!----------------------------- Second Paper ----------------------------->
-    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
+    <!-- ========== Second Paper ========== -->
+    <tr onmouseout="bog_stop('PredCorr_img')" onmouseover="bog_start('PredCorr_img')">
       <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='PredCorr_img'><video  width=100% muted autoplay loop>
-          <source src="images/PredCorr.png" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img class="popup-thumb" src='images/PredCorr.png' width=100%>
+        <div class="one" style="position:relative;">
+          <div class="two" id="PredCorr_img" style="position:absolute; inset:0; opacity:0; transition:opacity .2s;">
+            <img src="images/PredCorr.png" alt="HopCast preview" style="width:100%; height:auto;">
+          </div>
+          <img class="popup-thumb" src="images/PredCorr.png" alt="HopCast"
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
         </div>
-        <script type="text/javascript">
-          function bog_start() {
-            document.getElementById('PredCorr_img').style.opacity = "1";
-          }
-
-          function bog_stop() {
-            document.getElementById('PredCorr_img').style.opacity = "0";
-          }
-          bog_stop()
-        </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://creiser.github.io/binary_opacity_grid/">
-          <span class="papertitle">HopCast: Calibration of Autoregressive Dynamics Models
-</span>
+        <a href="#">
+          <span class="papertitle">HopCast: Calibration of Autoregressive Dynamics Models</span>
         </a>
         <br>
-				<strong>Muhammad Bilal Shahid</strong>,
-				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>,
+        <strong>Muhammad Bilal Shahid</strong>,
+        <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
         <em>Under Review</em>, 2025
         <br>
-        <a href="https://arxiv.org/abs/2501.16587">arXiv</a>
-        /
+        <a href="https://arxiv.org/abs/2501.16587">arXiv</a> /
         <a href="https://github.com/mbelalsh/HopCast">Code</a>
         <p></p>
-        <p>
-        A Predictor-Corrector mechanism to generate calibrated prediction intervals for autoregressive dynamics models.
-        </p>
+        <p>A predictor–corrector mechanism that yields calibrated prediction intervals for autoregressive dynamics models.</p>
       </td>
-    </tr>            
+    </tr>
 
-    <!----------------------------- Third Paper ----------------------------->
-    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
+    <!-- ========== Third Paper ========== -->
+    <tr onmouseout="bog_stop('CF_dynamics_img')" onmouseover="bog_start('CF_dynamics_img')">
       <td style="padding:16px;width:20%;vertical-align:middle">
-        <div class="one">
-          <div class="two" id='CF_dynamics_img'><video  width=100% muted autoplay loop>
-          <source src="images/CF_dynamics.png" type="video/mp4">
-          Your browser does not support the video tag.
-          </video></div>
-          <img class="popup-thumb" src='images/CF_dynamics.png' width=100%>
+        <div class="one" style="position:relative;">
+          <div class="two" id="CF_dynamics_img" style="position:absolute; inset:0; opacity:0; transition:opacity .2s;">
+            <img src="images/CF_dynamics.png" alt="Car-Following Dynamics preview" style="width:100%; height:auto;">
+          </div>
+          <img class="popup-thumb" src="images/CF_dynamics.png" alt="Car-Following Dynamics"
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
         </div>
-        <script type="text/javascript">
-          function bog_start() {
-            document.getElementById('CF_dynamics_img').style.opacity = "1";
-          }
-
-          function bog_stop() {
-            document.getElementById('CF_dynamics_img').style.opacity = "0";
-          }
-          bog_stop()
-        </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
-        <a href="https://creiser.github.io/binary_opacity_grid/">
-          <span class="papertitle">Towards Robust Car Following Dynamics Modeling via Blackbox Models: Methodology, Analysis, and Recommendations
-</span>
+        <a href="#">
+          <span class="papertitle">Towards Robust Car-Following Dynamics Modeling via Black-Box Models: Methodology, Analysis, and Recommendations</span>
         </a>
         <br>
-				<strong>Muhammad Bilal Shahid</strong>,
-				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>,
+        <strong>Muhammad Bilal Shahid</strong>,
+        <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
         <em>Transportation Research Record</em>, 2024
         <br>
-        <a href="https://arxiv.org/abs/2402.07139">arXiv</a>
-        /
+        <a href="https://arxiv.org/abs/2402.07139">arXiv</a> /
         <a href="https://github.com/coordinated-systems-lab/CarFollowModels">Code</a>
         <p></p>
-        <p>
-        We conducted a comprehensive study on the optimal target variable selection for training the Blackbox models of car following dynamics. The resulting models performed better in terms of extrapolation and accumulated lower error over time.
-        </p>
+        <p>We conducted a comprehensive study on optimal target-variable selection for training black-box models of car-following dynamics. The resulting models exhibited improved extrapolation and lower error accumulation over time.</p>
       </td>
-    </tr>     
+    </tr>  
 
         </td>
       </tr>
     </table>
 
-    <div id="img_modal" class="popup-modal" aria-hidden="true">
-      <button class="popup-close" aria-label="Close modal">&times;</button>
-      <img class="popup-content" id="popup_full" alt="">
-    </div>
-
-    <style>
-      .popup-modal {
-        display:none; position:fixed; inset:0;
-        background:rgba(0,0,0,0.9); z-index:1000;
-        padding:60px; text-align:center;
-      }
-      .popup-modal[aria-hidden="false"] { display:block; }
-      .popup-content { max-width:80vw; max-height:80vh; }
-      .popup-close {
-        position:absolute; top:16px; right:24px;
-        font-size:40px; color:#fff; background:none; border:0; cursor:pointer;
-      }
-      .popup-close:hover { color:#bbb; }
-    </style>
-
     <script>
-      (function () {
-        const modal = document.getElementById('img_modal');
-        const full  = document.getElementById('popup_full');
-        const closeBtn = modal.querySelector('.popup-close');
-
-        document.querySelectorAll('.popup-thumb').forEach(img => {
-          img.addEventListener('click', () => {
-            full.src = img.src;
-            modal.setAttribute('aria-hidden', 'false');
-          });
-        });
-
-        const close = () => modal.setAttribute('aria-hidden', 'true');
-        closeBtn.addEventListener('click', close);
-        modal.addEventListener('click', e => { if (e.target === modal) close(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-      })();
+      // Single pair of hover helpers
+      function bog_start(id) {
+        var el = document.getElementById(id);
+        if (el) el.style.opacity = "1";
+      }
+      function bog_stop(id) {
+        var el = document.getElementById(id);
+        if (el) el.style.opacity = "0";
+      }
+      // Initialize overlays hidden
+      ['ncde_corr_img','PredCorr_img','CF_dynamics_img'].forEach(id => bog_stop(id));
     </script>
 
   </body>
