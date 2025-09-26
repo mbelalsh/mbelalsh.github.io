@@ -64,6 +64,76 @@
           <img class="popup-thumb" src="images/ncde_corr.png" alt="Neural CDE Corrector"
                style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;" data-img="images/ncde_corr.png">
         </div>
+          <!-- The Modal -->
+        <div id="ncde_corr_modal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="ncde_corr_full">
+          <div id="caption"></div>
+        </div>
+
+        <style>
+          /* The Modal (background) */
+          .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9);
+          }
+
+          /* Modal Content (image) */
+          .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+          }
+
+          /* Close button */
+          .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          .close:hover {
+            color: #bbb;
+          }
+        </style>
+
+        <script>
+          // Get elements
+          var modal = document.getElementById("ncde_corr_modal");
+          var thumb = document.getElementById("ncde_corr_thumb");
+          var modalImg = document.getElementById("ncde_corr_full");
+          var span = document.getElementsByClassName("close")[0];
+
+          // When user clicks thumbnail
+          thumb.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+          }
+
+          // When user clicks on close (x)
+          span.onclick = function() { 
+            modal.style.display = "none";
+          }
+
+          // Also close when clicking outside the image
+          modal.onclick = function(e) {
+            if (e.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
         <a href="#">
@@ -149,31 +219,6 @@
       <span id="closeModal" style="position: absolute; top: 30px; right: 50px; color: #fff; font-size: 40px; cursor: pointer;">&times;</span>
       <img id="modalImg" style="display:block; margin: 60px auto; max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 2px 20px #000a;">
     </div>
-
-    <script>
-      document.querySelectorAll('.popup-thumb').forEach(function(img) {
-        img.addEventListener('click', function(event) {
-          event.preventDefault();
-          var imgSrc = img.getAttribute('data-img');
-          var modalImg = document.getElementById('modalImg');
-          var imageModal = document.getElementById('imageModal');
-          if (modalImg && imageModal && imgSrc) {
-            modalImg.src = imgSrc;
-            imageModal.style.display = "block";
-          }
-        });
-      });
-
-      document.getElementById('closeModal').onclick = function() {
-        document.getElementById('imageModal').style.display = "none";
-      };
-
-      document.getElementById('imageModal').onclick = function(event) {
-        if (event.target === document.getElementById('imageModal')) {
-          document.getElementById('imageModal').style.display = "none";
-        }
-      };
-    </script>
 
   </body>
 </html>
