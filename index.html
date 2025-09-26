@@ -151,23 +151,28 @@
     </div>
 
     <script>
-    document.querySelectorAll('.popup-thumb').forEach(function(img) {
-      img.addEventListener('click', function() {
-        var imgSrc = img.getAttribute('data-img');
-        document.getElementById('modalImg').src = imgSrc;
-        document.getElementById('imageModal').style.display = "block";
+      document.querySelectorAll('.popup-thumb').forEach(function(img) {
+        img.addEventListener('click', function(event) {
+          event.preventDefault();
+          var imgSrc = img.getAttribute('data-img');
+          var modalImg = document.getElementById('modalImg');
+          var imageModal = document.getElementById('imageModal');
+          if (modalImg && imageModal && imgSrc) {
+            modalImg.src = imgSrc;
+            imageModal.style.display = "block";
+          }
+        });
       });
-    });
 
-    document.getElementById('closeModal').onclick = function() {
-      document.getElementById('imageModal').style.display = "none";
-    };
-
-    document.getElementById('imageModal').onclick = function(event) {
-      if (event.target === document.getElementById('imageModal')) {
+      document.getElementById('closeModal').onclick = function() {
         document.getElementById('imageModal').style.display = "none";
-      }
-    };
+      };
+
+      document.getElementById('imageModal').onclick = function(event) {
+        if (event.target === document.getElementById('imageModal')) {
+          document.getElementById('imageModal').style.display = "none";
+        }
+      };
     </script>
 
   </body>
