@@ -56,81 +56,47 @@
 
     <!----------------------------- First Paper ----------------------------->           
 
-    <td style="padding:16px;width:20%;vertical-align:middle">
-      <!-- Thumbnail / small image -->
-      <img id="ncde_corr_thumb" src="images/ncde_corr.png" width="100%" style="cursor:pointer; border-radius:6px;">
-
-      <!-- The Modal -->
-      <div id="ncde_corr_modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="ncde_corr_full">
-        <div id="caption"></div>
-      </div>
-
-      <style>
-        /* The Modal (background) */
-        .modal {
-          display: none; 
-          position: fixed; 
-          z-index: 1000; 
-          padding-top: 60px; 
-          left: 0;
-          top: 0;
-          width: 100%; 
-          height: 100%; 
-          overflow: auto; 
-          background-color: rgba(0,0,0,0.9);
-        }
-
-        /* Modal Content (image) */
-        .modal-content {
-          margin: auto;
-          display: block;
-          max-width: 80%;
-          max-height: 80%;
-        }
-
-        /* Close button */
-        .close {
-          position: absolute;
-          top: 20px;
-          right: 35px;
-          color: #fff;
-          font-size: 40px;
-          font-weight: bold;
-          cursor: pointer;
-        }
-        .close:hover {
-          color: #bbb;
-        }
-      </style>
-
-      <script>
-        // Get elements
-        var modal = document.getElementById("ncde_corr_modal");
-        var thumb = document.getElementById("ncde_corr_thumb");
-        var modalImg = document.getElementById("ncde_corr_full");
-        var span = document.getElementsByClassName("close")[0];
-
-        // When user clicks thumbnail
-        thumb.onclick = function(){
-          modal.style.display = "block";
-          modalImg.src = this.src;
-        }
-
-        // When user clicks on close (x)
-        span.onclick = function() { 
-          modal.style.display = "none";
-        }
-
-        // Also close when clicking outside the image
-        modal.onclick = function(e) {
-          if (e.target == modal) {
-            modal.style.display = "none";
+    <tr onmouseout="bog_stop()" onmouseover="bog_start()">
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='ncde_corr_img'><video  width=100% muted autoplay loop>
+          <source src="images/ncde_corr.png" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img class="popup-thumb" src='images/ncde_corr.png' width=100%>
+        </div>
+        <script type="text/javascript">
+          function bog_start() {
+            document.getElementById('ncde_corr_img').style.opacity = "1";
           }
-        }
-      </script>
-    </td>           
+
+          function bog_stop() {
+            document.getElementById('ncde_corr_img').style.opacity = "0";
+          }
+          bog_stop()
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://creiser.github.io/binary_opacity_grid/">
+          <span class="papertitle">Neural CDEs as Correctors for learned time series models
+</span>
+        </a>
+        <br>
+				<strong>Muhammad Bilal Shahid</strong>,
+        <a href="https://prajwalkoirala.github.io/">Prajwal Koirla</a>,
+				<a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>,
+        <br>
+        <em>Under Review</em>, 2025
+        <br>
+        <a href="https://arxiv.org/abs/2501.16587">arXiv</a>
+        /
+        <a href="https://github.com/mbelalsh/ncde_corr">Code</a>
+        <p></p>
+        <p>
+        We proposed that the error dynamics of any learned time-series model can be modeled by Neural CDE to improve their forecasting performance.
+        </p>
+      </td>
+    </tr>            
 
     <!----------------------------- Second Paper ----------------------------->
     <tr onmouseout="bog_stop()" onmouseover="bog_start()">
@@ -140,7 +106,7 @@
           <source src="images/PredCorr.png" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
-          <img src='images/PredCorr.png' width=100%>
+          <img class="popup-thumb" src='images/PredCorr.png' width=100%>
         </div>
         <script type="text/javascript">
           function bog_start() {
@@ -182,7 +148,7 @@
           <source src="images/CF_dynamics.png" type="video/mp4">
           Your browser does not support the video tag.
           </video></div>
-          <img src='images/CF_dynamics.png' width=100%>
+          <img class="popup-thumb" src='images/CF_dynamics.png' width=100%>
         </div>
         <script type="text/javascript">
           function bog_start() {
@@ -219,5 +185,46 @@
         </td>
       </tr>
     </table>
+
+    <div id="img_modal" class="popup-modal" aria-hidden="true">
+      <button class="popup-close" aria-label="Close modal">&times;</button>
+      <img class="popup-content" id="popup_full" alt="">
+    </div>
+
+    <style>
+      .popup-modal {
+        display:none; position:fixed; inset:0;
+        background:rgba(0,0,0,0.9); z-index:1000;
+        padding:60px; text-align:center;
+      }
+      .popup-modal[aria-hidden="false"] { display:block; }
+      .popup-content { max-width:80vw; max-height:80vh; }
+      .popup-close {
+        position:absolute; top:16px; right:24px;
+        font-size:40px; color:#fff; background:none; border:0; cursor:pointer;
+      }
+      .popup-close:hover { color:#bbb; }
+    </style>
+
+    <script>
+      (function () {
+        const modal = document.getElementById('img_modal');
+        const full  = document.getElementById('popup_full');
+        const closeBtn = modal.querySelector('.popup-close');
+
+        document.querySelectorAll('.popup-thumb').forEach(img => {
+          img.addEventListener('click', () => {
+            full.src = img.src;
+            modal.setAttribute('aria-hidden', 'false');
+          });
+        });
+
+        const close = () => modal.setAttribute('aria-hidden', 'true');
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', e => { if (e.target === modal) close(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+      })();
+    </script>
+
   </body>
 </html>
