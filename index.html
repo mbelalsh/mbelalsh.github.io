@@ -62,7 +62,7 @@
             <img src="images/ncde_corr.png" alt="Neural CDE Corrector preview" style="width:100%; height:auto;">
           </div>
           <img class="popup-thumb" src="images/ncde_corr.png" alt="Neural CDE Corrector"
-               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;" data-img="images/ncde_corr.png">
         </div>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
@@ -92,7 +92,7 @@
             <img src="images/PredCorr.png" alt="HopCast preview" style="width:100%; height:auto;">
           </div>
           <img class="popup-thumb" src="images/PredCorr.png" alt="HopCast"
-               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;" data-img="images/PredCorr.png">
         </div>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
@@ -120,7 +120,7 @@
             <img src="images/CF_dynamics.png" alt="Car-Following Dynamics preview" style="width:100%; height:auto;">
           </div>
           <img class="popup-thumb" src="images/CF_dynamics.png" alt="Car-Following Dynamics"
-               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;">
+               style="width:100%; height:auto; display:block; border-radius:6px; cursor:pointer;" data-img="images/CF_dynamics.png">
         </div>
       </td>
       <td style="padding:8px;width:80%;vertical-align:middle">
@@ -144,38 +144,30 @@
       </tr>
     </table>
 
+    <!-- Modal Structure -->
+    <div id="imageModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; overflow: auto; background-color:rgba(0,0,0,0.75);">
+      <span id="closeModal" style="position: absolute; top: 30px; right: 50px; color: #fff; font-size: 40px; cursor: pointer;">&times;</span>
+      <img id="modalImg" style="display:block; margin: 60px auto; max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 2px 20px #000a;">
+    </div>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const modal   = document.getElementById('img_modal');
-        const full    = document.getElementById('popup_full');
-        const closeBtn= modal.querySelector('.popup-close');
-
-        function openModal(src) {
-          full.src = src;
-          modal.setAttribute('aria-hidden', 'false');
-        }
-        function closeModal() {
-          modal.setAttribute('aria-hidden', 'true');
-          full.removeAttribute('src');
-        }
-
-        // Click any .popup-thumb (event delegation covers dynamically-added nodes too)
-        document.addEventListener('click', function (e) {
-          const img = e.target.closest('.popup-thumb');
-          if (img) {
-            e.preventDefault();
-            openModal(img.src);
-          }
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', function (e) {
-          if (e.target === modal) closeModal();
-        });
-        document.addEventListener('keydown', function (e) {
-          if (e.key === 'Escape') closeModal();
-        });
+    document.querySelectorAll('.popup-thumb').forEach(function(img) {
+      img.addEventListener('click', function() {
+        var imgSrc = img.getAttribute('data-img');
+        document.getElementById('modalImg').src = imgSrc;
+        document.getElementById('imageModal').style.display = "block";
       });
+    });
+
+    document.getElementById('closeModal').onclick = function() {
+      document.getElementById('imageModal').style.display = "none";
+    };
+
+    document.getElementById('imageModal').onclick = function(event) {
+      if (event.target === document.getElementById('imageModal')) {
+        document.getElementById('imageModal').style.display = "none";
+      }
+    };
     </script>
 
   </body>
