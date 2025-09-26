@@ -144,25 +144,39 @@
       </tr>
     </table>
 
-    <div id="img_modal" class="popup-modal" aria-hidden="true">
-      <button class="popup-close" aria-label="Close modal">&times;</button>
-      <img class="popup-content" id="popup_full" alt="">
-    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal   = document.getElementById('img_modal');
+        const full    = document.getElementById('popup_full');
+        const closeBtn= modal.querySelector('.popup-close');
 
-    <style>
-      .popup-modal {
-        display:none; position:fixed; inset:0;
-        background:rgba(0,0,0,0.9); z-index:1000;
-        padding:60px; text-align:center;
-      }
-      .popup-modal[aria-hidden="false"] { display:block; }
-      .popup-content { max-width:80vw; max-height:80vh; }
-      .popup-close {
-        position:absolute; top:16px; right:24px;
-        font-size:40px; color:#fff; background:none; border:0; cursor:pointer;
-      }
-      .popup-close:hover { color:#bbb; }
-    </style>
+        function openModal(src) {
+          full.src = src;
+          modal.setAttribute('aria-hidden', 'false');
+        }
+        function closeModal() {
+          modal.setAttribute('aria-hidden', 'true');
+          full.removeAttribute('src');
+        }
+
+        // Click any .popup-thumb (event delegation covers dynamically-added nodes too)
+        document.addEventListener('click', function (e) {
+          const img = e.target.closest('.popup-thumb');
+          if (img) {
+            e.preventDefault();
+            openModal(img.src);
+          }
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeModal();
+        });
+      });
+    </script>
 
   </body>
 </html>
