@@ -23,8 +23,8 @@
                   Muhammad Bilal Shahid
                 </p>
                 <p>
-		I am working towards my PhD at <a href="https://coordinatedsystemslab.me.iastate.edu/">Coordinated Systems Lab</a> in Ames, IA, where I am working under the supervision of <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Dr. Cody Fleming</a>.
-		During my PhD, I've worked on a number of interesting projects mainly related to <strong>Dynamical Systems Modeling</strong>, <strong>Time Series Forecasting</strong>, and <strong>Uncertainty Quantification</strong>. I am finishing my PhD in Mechanical Engineering with a minor in Computer Engineering next year and will be on the job market.
+		I am a Postdoctoral Research Associate at the <a href="https://coordinatedsystemslab.me.iastate.edu/">Coordinated Systems Lab</a> at Iowa State University in Ames, IA, working with <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Dr. Cody Fleming</a>. I recently completed my PhD in Mechanical Engineering with a minor in Computer Engineering.
+		My research develops <strong>uncertainty-aware machine learning</strong> for aerospace dynamical systems, including spacecraft and aircraft trajectory forecasting. I build <strong>Predictor-Corrector</strong> frameworks that correct and calibrate learned and physics-based forecasters using Neural CDEs and Modern Hopfield Networks.
                 </p>
                 <p style="text-align:center">
                   <a href="mailto:mbilalshahed@gmail.com">Email</a> &nbsp;/&nbsp;
@@ -52,6 +52,83 @@
           </tbody></table>
           --> 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+    <!-- ========== CTPC Spacecraft Paper ========== -->
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <img id="ctpc_sc_thumb" src="images/ctpc_spacecraft.png" width="100%" style="cursor:pointer; border-radius:6px;">
+        <div id="ctpc_sc_modal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="ctpc_sc_full">
+          <div id="caption"></div>
+        </div>
+        <script>
+          (function(){
+            var modal = document.getElementById("ctpc_sc_modal");
+            var thumb = document.getElementById("ctpc_sc_thumb");
+            var modalImg = document.getElementById("ctpc_sc_full");
+            var span = modal.getElementsByClassName("close")[0];
+            thumb.onclick = function(){ modal.style.display = "block"; modalImg.src = this.src; }
+            span.onclick = function(){ modal.style.display = "none"; }
+            modal.onclick = function(e){ if (e.target == modal) modal.style.display = "none"; }
+          })();
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="https://arxiv.org/abs/2606.21021">
+          <span class="papertitle">Continuous-Time Probabilistic Correctors for Uncertainty-Aware Physics-Based Spacecraft Trajectory Forecasting</span>
+        </a>
+        <br>
+        <strong>Muhammad Bilal Shahid</strong>,
+        Zhen Jiang,
+        <a href="https://www.me.iastate.edu/faculty/?user_page=soumiks">Soumik Sarkar</a>,
+        <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
+        <br>
+        <em>Under Review (Aerospace Science and Technology)</em>, 2026
+        <br>
+        <a href="https://arxiv.org/abs/2606.21021">Paper</a> /
+        <a href="https://doi.org/10.5281/zenodo.20741146">Code</a>
+        <p></p>
+        <p>A Predictor&ndash;Corrector framework in which a Latent Neural CDE wraps NASA's GMAT propagator, correcting its forecasts while producing calibrated full-covariance uncertainty over 2&ndash;4 day horizons. Evaluated on real-world ephemeris data from NASA's CDDIS.</p>
+      </td>
+    </tr>
+
+    <!-- ========== GMAT SciTech Paper ========== -->
+    <tr>
+      <td style="padding:16px;width:20%;vertical-align:middle">
+        <img id="ctpc_gmat_thumb" src="images/ctpc_gmat.png" width="100%" style="cursor:pointer; border-radius:6px;">
+        <div id="ctpc_gmat_modal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="ctpc_gmat_full">
+          <div id="caption"></div>
+        </div>
+        <script>
+          (function(){
+            var modal = document.getElementById("ctpc_gmat_modal");
+            var thumb = document.getElementById("ctpc_gmat_thumb");
+            var modalImg = document.getElementById("ctpc_gmat_full");
+            var span = modal.getElementsByClassName("close")[0];
+            thumb.onclick = function(){ modal.style.display = "block"; modalImg.src = this.src; }
+            span.onclick = function(){ modal.style.display = "none"; }
+            modal.onclick = function(e){ if (e.target == modal) modal.style.display = "none"; }
+          })();
+        </script>
+      </td>
+      <td style="padding:8px;width:80%;vertical-align:middle">
+        <a href="#">
+          <span class="papertitle">Probabilistic Correction for GMAT-Based Spacecraft Trajectory Forecasting</span>
+        </a>
+        <br>
+        <strong>Muhammad Bilal Shahid</strong>,
+        Zhen Jiang,
+        <a href="https://www.me.iastate.edu/faculty/?user_page=soumiks">Soumik Sarkar</a>,
+        <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
+        <br>
+        <em>AIAA SciTech 2027 Forum (Accepted)</em>, 2027
+        <p></p>
+        <p>A non-disruptive augmentation of the operational SDA pipeline: a learned corrector calibrates the mean and covariance of a deterministic GMAT predictor, improving conjunction-risk estimates without changes to downstream tools.</p>
+      </td>
+    </tr>
 
     <!-- ========== First Paper ========== -->
     <tr onmouseout="bog_stop('ncde_corr_img')" onmouseover="bog_start('ncde_corr_img')">
@@ -140,12 +217,14 @@
         </a>
         <br>
         <strong>Muhammad Bilal Shahid</strong>,
-        <a href="https://prajwalkoirala.github.io/">Prajwal Koirla</a>,
+        Zhen Jiang,
+        <a href="https://prajwalkoirala.github.io/">Prajwal Koirala</a>,
+        <a href="https://www.me.iastate.edu/faculty/?user_page=soumiks">Soumik Sarkar</a>,
         <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
-        <em>Under Review</em>, 2025
+        <em>Under Review (Neural Networks)</em>, 2026
         <br>
-        <a href="https://drive.google.com/file/d/1DbO_wNIheV1AzfL6LYKXJUOhYcKEsngK/view?usp=sharing">Paper</a> /
+        <a href="https://arxiv.org/abs/2512.12116">Paper</a> /
         <a href="https://github.com/mbelalsh/ncde_corr">Code</a>
         <p></p>
         <p>We propose modeling the error dynamics of learned time-series predictors with a Neural CDE to improve long-horizon forecasting.</p>
@@ -242,9 +321,9 @@
         <strong>Muhammad Bilal Shahid</strong>,
         <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
-        <em>Under Review</em>, 2025
+        <em>Transactions on Machine Learning Research (TMLR)</em>, 2025
         <br>
-        <a href="https://arxiv.org/abs/2501.16587">Paper</a> /
+        <a href="https://openreview.net/forum?id=wsO6nxvGof">Paper</a> /
         <a href="https://github.com/mbelalsh/HopCast">Code</a>
         <p></p>
         <p>A predictor–corrector mechanism that yields calibrated prediction intervals for autoregressive dynamics models.</p>
@@ -340,7 +419,7 @@
         <strong>Muhammad Bilal Shahid</strong>,
         <a href="https://www.engineering.iastate.edu/people/profile/flemingc/">Cody Fleming</a>
         <br>
-        <em>Transportation Research Record</em>, 2024
+        <em>Transportation Research Record</em>, 2025
         <br>
         <a href="https://arxiv.org/abs/2402.07139">Paper</a> /
         <a href="https://github.com/coordinated-systems-lab/CarFollowModels">Code</a>
